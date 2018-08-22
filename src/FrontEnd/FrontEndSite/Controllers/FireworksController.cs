@@ -12,9 +12,10 @@ namespace FrontEndSite.Controllers
     public class FireworksController : ControllerBase
     {
         [HttpGet]
-        public int NumberOfFireworks()
+        public async Task<int> NumberOfFireworks()
         {
-            return 3;
+            BackEndService service = new BackEndService();
+            return await service.GetFireworksCounter();
         }
     }
 }

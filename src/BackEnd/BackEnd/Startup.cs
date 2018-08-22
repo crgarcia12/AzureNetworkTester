@@ -36,6 +36,8 @@ namespace BackEnd
             }
 
             app.UseMvc();
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
         }
     }
 }
