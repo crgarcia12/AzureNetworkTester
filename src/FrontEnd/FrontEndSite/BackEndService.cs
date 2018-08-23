@@ -13,10 +13,9 @@ namespace FrontEndSite
 
         public async Task<int> GetFireworksCounter()
         {
-            HttpResponseMessage returnMessage = await client.GetAsync("http://localhost:55791/api/FireworksCounter");
+            HttpResponseMessage returnMessage = await client.GetAsync(SettingsManager.Instance.BackEndUrl);
             string value = await returnMessage.Content.ReadAsStringAsync();
             return Int32.Parse(value);
-
         }
     }
 }
